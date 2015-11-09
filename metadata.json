@@ -1,0 +1,5 @@
+{
+  "name": "rbenigno/trusty64",
+  "description": "This box contains Ubuntu 14.04 LTS 64-bit.",
+  "provider": "vmware_desktop"
+}

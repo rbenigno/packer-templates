@@ -1,0 +1,11 @@
+# Cache objects
+packer_cache/
+
+# Build output
+output*/
+
+# For built boxes
+*.box
+
+# VMware tools
+*.iso

@@ -1,0 +1,47 @@
+{
+  "variables": {
+    "PACKER_OS_FLAVOUR": "ubuntu",
+    "PACKER_BOX_NAME": "rbenigno/trusty64",
+    "iso_folder": "/Users/RBenigno/Dropbox/Software/ISO"
+  },
+
+  "builders": [{
+    "name": "trusty64",
+    "type": "vmware-iso",
+    "iso_urls": [
+      "{{user `iso_folder`}}/ubuntu-14.04.2-server-amd64.iso"
+    ],
+    "iso_checksum": "83aabd8dcf1e8f469f3c72fff2375195",
+    "iso_checksum_type": "md5",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "10000s",
+    "http_directory": "http_files",
+    "tools_upload_flavor": "linux",
+    "headless": true,
+    "boot_command": [
+      "<esc><esc><enter><wait>",
+      "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ps_trusty.cfg <wait>",
+      "debian-installer=en_US auto locale=en_US kbd-chooser/method=us <wait>",
+      "hostname=ubuntu <wait>",
+      "fb=false debconf/frontend=noninteractive <wait>",
+      "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=us keyboard-configuration/variant=us console-setup/ask_detect=false <wait>",
+      "initrd=/install/initrd.gz -- <enter><wait>"
+    ],
+    "shutdown_command": "sudo shutdown -P now"
+  }],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "scripts": [
+        "scripts/update.sh",
+        "scripts/vmtools.sh",
+        "scripts/vagrant.sh"
+      ]
+    }
+  ],
+
+  "post-processors": ["vagrant"]
+}

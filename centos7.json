@@ -1,0 +1,24 @@
+{
+  "variables": {
+    "iso_folder": "/Users/RLB/Dropbox/Software/ISO"
+  },
+
+  "builders": [{
+    "name": "centos7_{{isotime \"200601021504\"}}",
+    "type": "vmware-iso",
+    "iso_urls": [
+      "{{user `iso_folder`}}/CentOS-7.0-1406-x86_64-DVD.iso"
+    ],
+    "iso_checksum": "713ea7847adcdd1700e92429f212721a",
+    "iso_checksum_type": "md5",
+    "http_directory": "http_files",
+    "boot_command": [
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks_centos7.cfg<enter><wait>"
+    ],
+    "headless": true,
+    "ssh_username": "packer",
+    "ssh_password": "packer",
+    "ssh_wait_timeout": "10000s",
+    "shutdown_command": "echo 'packer'|sudo -S /sbin/halt -h -p"
+  }]
+}
