@@ -27,7 +27,8 @@
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "scripts": [
-        "scripts/vagrant.sh"
+        "scripts/vagrant.sh",
+        "scripts/update.sh"
       ]
     }
   ],
