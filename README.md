@@ -4,8 +4,8 @@ Ryan's Packer Templates
 List
 ----
 
-- Ubuntu 14.04.2 Server (x64): trusty.2.json
-- Ubuntu 14.04.2 Server with OpenStack Juno Repo (x64): trusty.2_juno.json
+- Ubuntu 14.04.2 Server (x64): trusty64.json
+- Ubuntu 14.04.2 Server with OpenStack Juno Repo (x64): trusty64_juno.json
 - CentOS 7.0 1406 (x64): centos7.json
 
 Prerequisites
@@ -24,8 +24,8 @@ Usage Example
 
 - Build the vagrant box
 
-    packer build trusty.2.json
+    packer build trusty64.json
 
 - Add the box into Vagrant
 
-    vagrant box add packer_trusty64_vmware.box --name rbenigno/trusty64
+    vagrant box add ubuntu-14.04-server-x64-vmware.box --name rbenigno/trusty64

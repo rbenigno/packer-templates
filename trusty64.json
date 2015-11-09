@@ -2,7 +2,7 @@
   "variables": {
     "PACKER_OS_FLAVOUR": "ubuntu",
     "PACKER_BOX_NAME": "rbenigno/trusty64",
-    "iso_folder": "/Users/RBenigno/Dropbox/Software/ISO"
+    "iso_folder": "/Users/RLB/Dropbox/Software/ISO"
   },
 
   "builders": [{
@@ -43,5 +43,15 @@
     }
   ],
 
-  "post-processors": ["vagrant"]
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "keep_input_artifact": true,
+      "override": {
+        "vmware": {
+          "output": "ubuntu-14.04-server-x64-vmware.box"
+        }
+      }
+    }
+  ] 
 }
