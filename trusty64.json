@@ -6,12 +6,12 @@
   },
 
   "builders": [{
-    "name": "trusty64",
+    "name": "trusty64_{{isotime \"200601021504\"}}",
     "type": "vmware-iso",
     "iso_urls": [
-      "{{user `iso_folder`}}/ubuntu-14.04.2-server-amd64.iso"
+      "{{user `iso_folder`}}/ubuntu-14.04.3-server-amd64.iso"
     ],
-    "iso_checksum": "83aabd8dcf1e8f469f3c72fff2375195",
+    "iso_checksum": "9e5fecc94b3925bededed0fdca1bd417",
     "iso_checksum_type": "md5",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -36,9 +36,9 @@
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "scripts": [
+        "scripts/vagrant.sh",
         "scripts/update.sh",
-        "scripts/vmtools.sh",
-        "scripts/vagrant.sh"
+        "scripts/vmtools.sh"
       ]
     }
   ],
