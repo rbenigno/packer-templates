@@ -13,7 +13,7 @@ vmware-iso|vmware-ovf)
     #sed -i -e s/d_alias/d_u.d_alias/ vmhgfs-only/inode.c
     #tar cf vmhgfs.tar vmhgfs-only
     # END PATCH
-    /tmp/vmtools-archive/vmware-tools-distrib/vmware-install.pl --default
+    /tmp/vmtools-archive/vmware-tools-distrib/vmware-install.pl --default --force-install
     umount /tmp/vmtools
     rm -rf  /tmp/vmtools
     rm -rf  /tmp/vmtools-archive

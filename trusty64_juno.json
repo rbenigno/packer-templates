@@ -36,10 +36,10 @@
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "scripts": [
+        "scripts/vagrant.sh",
         "scripts/juno_repo.sh",
         "scripts/update.sh",
-        "scripts/vmtools.sh",
-        "scripts/vagrant.sh"
+        "scripts/vmtools.sh"
       ]
     }
   ],
