@@ -11,7 +11,6 @@
     ],
     "iso_checksum": "99e450fb1b22d2e528757653fcbf5fdc",
     "iso_checksum_type": "md5",
-    "tools_upload_flavor": "linux",
     "http_directory": "http_files",
     "boot_command": [
       "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks_centos7.cfg<enter><wait>"
@@ -24,6 +23,11 @@
   }],
 
   "provisioners": [
+    {
+      "type": "file",
+      "source": "linux.iso",
+      "destination": "/home/vagrant/linux.iso"
+    },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",

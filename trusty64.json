@@ -17,7 +17,6 @@
     "ssh_password": "vagrant",
     "ssh_wait_timeout": "10000s",
     "http_directory": "http_files",
-    "tools_upload_flavor": "linux",
     "headless": true,
     "boot_command": [
       "<esc><esc><enter><wait>",
@@ -32,6 +31,11 @@
   }],
 
   "provisioners": [
+    {
+      "type": "file",
+      "source": "linux.iso",
+      "destination": "/home/vagrant/linux.iso"
+    },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",

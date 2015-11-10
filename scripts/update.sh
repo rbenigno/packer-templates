@@ -24,5 +24,6 @@ case $NAME in
 esac
 
 # Reboot
+echo "Rebooting..."
 reboot
 sleep 60
