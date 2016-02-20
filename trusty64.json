@@ -2,7 +2,7 @@
   "variables": {
     "PACKER_OS_FLAVOUR": "ubuntu",
     "PACKER_BOX_NAME": "rbenigno/trusty64",
-    "iso_folder": "/Users/RLB/Dropbox/Software/ISO"
+    "iso_folder": "{{env `HOME`}}/Dropbox/Software/ISO"
   },
 
   "builders": [{

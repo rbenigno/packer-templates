@@ -1,13 +1,16 @@
 {
   "variables": {
-    "iso_folder": "/Users/RLB/Dropbox/Software/ISO"
+    "iso_folder": "{{env `HOME`}}/Dropbox/Software/ISO",
+    "iso_file": "CentOS-7-x86_64-DVD-1503-01.iso",
+    "iso_mirror": "http://mirrors.usc.edu/pub/linux/distributions/centos/7.1.1503/isos/x86_64"
   },
 
   "builders": [{
     "name": "centos7_{{isotime \"200601021504\"}}",
     "type": "vmware-iso",
     "iso_urls": [
-      "{{user `iso_folder`}}/CentOS-7-x86_64-DVD-1503-01.iso"
+      "{{user `iso_folder`}}/{{user `iso_file`}}",
+      "{{user `iso_mirror`}}/{{user `iso_file`}}"
     ],
     "iso_checksum": "99e450fb1b22d2e528757653fcbf5fdc",
     "iso_checksum_type": "md5",
