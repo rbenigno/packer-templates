@@ -1,8 +1,8 @@
 {
   "variables": {
     "iso_folder": "{{env `HOME`}}/Dropbox/Software/ISO",
-    "iso_file": "CentOS-7-x86_64-DVD-1503-01.iso",
-    "iso_mirror": "http://mirrors.usc.edu/pub/linux/distributions/centos/7.1.1503/isos/x86_64"
+    "iso_file": "CentOS-7-x86_64-DVD-1511.iso",
+    "iso_mirror": "http://mirrors.usc.edu/pub/linux/distributions/centos/7.2.1511/isos/x86_64"
   },
 
   "builders": [{
@@ -12,7 +12,7 @@
       "{{user `iso_folder`}}/{{user `iso_file`}}",
       "{{user `iso_mirror`}}/{{user `iso_file`}}"
     ],
-    "iso_checksum": "99e450fb1b22d2e528757653fcbf5fdc",
+    "iso_checksum": "c875b0f1dabda14f00a3e261d241f63e",
     "iso_checksum_type": "md5",
     "http_directory": "http_files",
     "boot_command": [
