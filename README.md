@@ -24,8 +24,8 @@ Usage Example
 
 - Build the vagrant box
 
-    packer build trusty64.json
+    packer build centos7.json
 
 - Add the box into Vagrant
 
-    vagrant box add ubuntu-14.04-server-x64-vmware.box --name rbenigno/trusty64
+    vagrant box add output/centos-7-x86_x64-vmware.box --name rbenigno/centos7

@@ -6,14 +6,17 @@
   },
 
   "builders": [{
-    "name": "centos7_{{isotime \"200601021504\"}}",
+    "name": "centos7-1611",
+    "iso_checksum": "c018577c75b2434fbb2c324789dee0ba887d9c32",
+    "iso_checksum_type": "sha1",
+    "guest_os_type": "centos-64",
+    "disk_size": "10240",
     "type": "vmware-iso",
     "iso_urls": [
       "{{user `iso_folder`}}/{{user `iso_file`}}",
       "{{user `iso_mirror`}}/{{user `iso_file`}}"
     ],
-    "iso_checksum": "c018577c75b2434fbb2c324789dee0ba887d9c32",
-    "iso_checksum_type": "sha1",
+    "output_directory": "output/{{build_name}}",
     "http_directory": "http_files",
     "boot_command": [
       "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks_centos7.cfg<enter><wait>"
@@ -48,7 +51,7 @@
       "keep_input_artifact": true,
       "override": {
         "vmware": {
-          "output": "centos-7-x86_x64-vmware.box"
+          "output": "output/centos-7-x86_x64-vmware.box"
         }
       }
     }
