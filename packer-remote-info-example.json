@@ -1,0 +1,7 @@
+{
+  "packer_remote_host": "172.26.3.11",
+  "packer_remote_username": "root",
+  "packer_remote_password": "Passw0rd",
+  "packer_remote_datastore": "vm_lab_ds1",
+  "packer_remote_network": "VM-Lab-2"
+}

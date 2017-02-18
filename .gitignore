@@ -1,3 +1,6 @@
+# ESXi host info
+packer-remote-info.json
+
 # Cache objects
 packer_cache/
 
@@ -7,8 +10,8 @@ output*/
 # For built boxes
 *.box
 
-# VMware tools
-*.iso
+# ISOs
+iso/*.iso
 
 # OS X
 .DS_Store
